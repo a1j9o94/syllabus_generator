@@ -34,7 +34,7 @@ public class InstructorServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    try{
-	        ArrayList<Instructor> instructors = InstructorManager.getEducators();
+	        ArrayList<Instructor> instructors = InstructorManager.getInstructors();
 	        
 	        ObjectMapper om = new ObjectMapper();
 	        ObjectWriter ow = om.writer().withDefaultPrettyPrinter();

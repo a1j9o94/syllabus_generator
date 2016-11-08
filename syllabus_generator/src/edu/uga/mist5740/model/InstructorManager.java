@@ -18,14 +18,14 @@ public class InstructorManager {
 
     }
 
-    public static ArrayList<Instructor> getEducators() throws NamingException, SQLException {
+    public static ArrayList<Instructor> getInstructors() throws NamingException, SQLException {
         ArrayList<Instructor> result = new ArrayList<>();
         if (instructors != null) {
 
         } else {
             connection = SyllabyeDBConnection.getConnection();
             instructors = new ArrayList<>();
-            populateEducators();
+            populateInstructors();
 
         }
         for (Instructor instructor : instructors) {
@@ -35,19 +35,20 @@ public class InstructorManager {
 
     }
     
-    private static void populateEducators() throws SQLException{
+    private static void populateInstructors() throws SQLException{
         createConnection();
-        String query = "SELECT * FROM educator";
+        String query = "SELECT * FROM instructor";
         ResultSet results = null;
         PreparedStatement ps = connection.prepareStatement(query);
         results = ps.executeQuery();
         while (results.next()) {
-            addSingleEducator(results);
+            addSingleInstructor(results);
         }
     }
     
-    private static void addSingleEducator(ResultSet results) throws SQLException{
+    private static void addSingleInstructor(ResultSet results) throws SQLException{
         //TODO set all educator fields based on database
+        Instructor instructor = new Instructor();
     }
     
     private static void createConnection(){
@@ -55,7 +56,7 @@ public class InstructorManager {
             try {
                 connection = SyllabyeDBConnection.getConnection();
                 instructors = new ArrayList<>();
-                populateEducators();
+                populateInstructors();
             } catch (NamingException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
