@@ -1,5 +1,6 @@
 package edu.uga.mist5740.model;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +11,7 @@ import javax.naming.NamingException;
 
 import edu.uga.mist5740.tools.database.SyllabyeDBConnection;
 
-public class InstructorManager {
+public class InstructorManager implements Serializable{
     private static ArrayList<Instructor> instructors;
     private static Connection connection;
 
