@@ -1,6 +1,7 @@
 package edu.uga.mist5740.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Course implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -10,6 +11,7 @@ public class Course implements Serializable {
     private Instructor instructor;
     private Calendar calendar;
     private String additionalNotes;
+    private ArrayList<Grade> weightings;
 
     public int getCourseId() {
         return courseId;
@@ -34,6 +36,14 @@ public class Course implements Serializable {
     public String getAdditionalNotes() {
         return additionalNotes;
     }
+    
+    public ArrayList<Grade> getWeightings(){
+        ArrayList<Grade> result = new ArrayList<>();
+        for(Grade grade : weightings){
+            result.add(grade);
+        }
+        return result;
+    }
 
     public void setCourseId(int courseId) {
         this.courseId = courseId;
@@ -57,5 +67,9 @@ public class Course implements Serializable {
 
     public void setAdditionalNotes(String additionalNotes) {
         this.additionalNotes = additionalNotes;
+    }
+    
+    public void addGade(Grade gade){
+        weightings.add(gade);
     }
 }
