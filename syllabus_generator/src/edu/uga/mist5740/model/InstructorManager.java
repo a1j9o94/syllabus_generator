@@ -10,26 +10,26 @@ import javax.naming.NamingException;
 
 import edu.uga.mist5740.tools.database.SyllabyeDBConnection;
 
-public class EducatorManager {
-    private static ArrayList<Educator> educators;
+public class InstructorManager {
+    private static ArrayList<Instructor> instructors;
     private static Connection connection;
 
-    private EducatorManager() {
+    private InstructorManager() {
 
     }
 
-    public static ArrayList<Educator> getEducators() throws NamingException, SQLException {
-        ArrayList<Educator> result = new ArrayList<>();
-        if (educators != null) {
+    public static ArrayList<Instructor> getEducators() throws NamingException, SQLException {
+        ArrayList<Instructor> result = new ArrayList<>();
+        if (instructors != null) {
 
         } else {
             connection = SyllabyeDBConnection.getConnection();
-            educators = new ArrayList<>();
+            instructors = new ArrayList<>();
             populateEducators();
 
         }
-        for (Educator educator : educators) {
-            result.add(educator);
+        for (Instructor instructor : instructors) {
+            result.add(instructor);
         }
         return result;
 
@@ -54,7 +54,7 @@ public class EducatorManager {
         if (connection == null) {
             try {
                 connection = SyllabyeDBConnection.getConnection();
-                educators = new ArrayList<>();
+                instructors = new ArrayList<>();
                 populateEducators();
             } catch (NamingException e) {
                 // TODO Auto-generated catch block
