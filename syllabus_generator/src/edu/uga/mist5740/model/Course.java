@@ -69,7 +69,7 @@ public class Course implements Serializable {
         this.additionalNotes = additionalNotes;
     }
     
-    public void addGade(Grade gade){
-        weightings.add(gade);
+    public void addGade(Grade grade){
+        weightings.add(grade);
     }
 }
