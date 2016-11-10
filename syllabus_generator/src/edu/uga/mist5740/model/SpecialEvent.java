@@ -11,7 +11,8 @@ import java.sql.Date;
  *
  */
 public class SpecialEvent implements Serializable{
-	private int specialEventID;
+    private static final long serialVersionUID = 1L;
+    private int specialEventID;
 	private Date datetime;
 	private String name;
 	private String location;

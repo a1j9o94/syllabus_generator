@@ -3,7 +3,7 @@ package edu.uga.mist5740.model;
 import java.io.Serializable;
 
 public class Instructor implements Serializable{
-    //TODO create fields and getters and setters for all fields
+    private static final long serialVersionUID = 1L;
 	private int instructorID;
 	private String firstName;
 	private String lastName;

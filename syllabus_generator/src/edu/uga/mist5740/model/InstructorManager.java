@@ -12,6 +12,7 @@ import javax.naming.NamingException;
 import edu.uga.mist5740.tools.database.SyllabyeDBConnection;
 
 public class InstructorManager implements Serializable{
+    private static final long serialVersionUID = 1L;
     private static ArrayList<Instructor> instructors;
     private static Connection connection;
 
