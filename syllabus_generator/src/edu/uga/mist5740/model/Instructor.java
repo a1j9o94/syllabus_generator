@@ -1,6 +1,7 @@
 package edu.uga.mist5740.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Instructor implements Serializable{
     private static final long serialVersionUID = 1L;
@@ -9,6 +10,7 @@ public class Instructor implements Serializable{
 	private String lastName;
 	private String officePhone;
 	private String addInfo;
+	private ArrayList<Course> courses;
 	
 	/**
 	 * @param instructorID
@@ -75,5 +77,20 @@ public class Instructor implements Serializable{
 	public void setAddInfo(String addInfo) {
 		this.addInfo = addInfo;
 	}
-	
+	/**
+	 * @param course A course this instructor teaches
+	 */
+	public void addCourse(Course course){
+	    courses.add(course);
+	}
+	/**
+	 * @return courses All of the courses this instructor has taught
+	 */
+	public ArrayList<Course> getCourses(){
+	    ArrayList<Course> result = new ArrayList<>();
+	    for(Course course : courses){
+	        result.add(course);
+	    }
+	    return result;
+	}
 }

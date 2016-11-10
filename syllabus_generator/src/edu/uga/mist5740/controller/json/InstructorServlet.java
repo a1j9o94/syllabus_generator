@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
 import edu.uga.mist5740.model.Instructor;
-import edu.uga.mist5740.model.InstructorManager;
+import edu.uga.mist5740.model.InstructorRetrievalManager;
 
 /**
  * Servlet implementation class InstructorServlet
@@ -34,7 +34,7 @@ public class InstructorServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    try{
-	        ArrayList<Instructor> instructors = InstructorManager.getInstructors();
+	        ArrayList<Instructor> instructors = InstructorRetrievalManager.getInstructors();
 	        
 	        ObjectMapper om = new ObjectMapper();
 	        ObjectWriter ow = om.writer().withDefaultPrettyPrinter();

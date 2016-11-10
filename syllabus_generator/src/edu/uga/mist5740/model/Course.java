@@ -8,10 +8,10 @@ public class Course implements Serializable {
     private int courseId;
     private String courseName;
     private String courseDescription;
-    private Instructor instructor;
     private Calendar calendar;
     private String additionalNotes;
     private ArrayList<Grade> weightings;
+    private ArrayList<Book> books;
 
     public int getCourseId() {
         return courseId;
@@ -23,10 +23,6 @@ public class Course implements Serializable {
 
     public String getCourseDescription() {
         return courseDescription;
-    }
-
-    public Instructor getInstructor() {
-        return instructor;
     }
 
     public Calendar getCalendar() {
@@ -44,6 +40,14 @@ public class Course implements Serializable {
         }
         return result;
     }
+    
+    public ArrayList<Book> getBooks(){
+        ArrayList<Book> result = new ArrayList<>();
+        for(Book book : books){
+            result.add(book);
+        }
+        return result;
+    }
 
     public void setCourseId(int courseId) {
         this.courseId = courseId;
@@ -57,10 +61,6 @@ public class Course implements Serializable {
         this.courseDescription = courseDescription;
     }
 
-    public void setInstructor(Instructor instructor) {
-        this.instructor = instructor;
-    }
-
     public void setCalendar(Calendar calendar) {
         this.calendar = calendar;
     }
@@ -71,5 +71,9 @@ public class Course implements Serializable {
     
     public void addGade(Grade grade){
         weightings.add(grade);
+    }
+    
+    public void addBook(Book book){
+        books.add(book);
     }
 }
