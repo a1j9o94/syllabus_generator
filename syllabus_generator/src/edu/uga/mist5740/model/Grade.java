@@ -6,7 +6,7 @@ public class Grade implements Serializable {
     private static final long serialVersionUID = 1L;
     private int gradeID;
     private String gradeName;
-    private String gradeWeight;
+    private double gradeWeight;
 
     public int getGradeID() {
         return gradeID;
@@ -16,7 +16,7 @@ public class Grade implements Serializable {
         return gradeName;
     }
 
-    public String getGradeWeight() {
+    public double getGradeWeight() {
         return gradeWeight;
     }
 
@@ -28,7 +28,7 @@ public class Grade implements Serializable {
         this.gradeName = gradeName;
     }
 
-    public void setGradeWeight(String gradeWeight) {
+    public void setGradeWeight(double gradeWeight) {
         this.gradeWeight = gradeWeight;
     }
 }

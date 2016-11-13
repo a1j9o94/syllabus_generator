@@ -16,6 +16,7 @@ public class Instructor implements Serializable{
 	 * @param instructorID
 	 */
 	public Instructor() {
+	    courses = new ArrayList<>();
 	}
 	/**
 	 * @return the instructorID

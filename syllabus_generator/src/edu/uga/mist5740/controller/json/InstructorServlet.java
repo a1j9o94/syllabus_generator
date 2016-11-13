@@ -18,7 +18,7 @@ import edu.uga.mist5740.model.InstructorRetrievalManager;
 /**
  * Servlet implementation class InstructorServlet
  */
-@WebServlet(description = "Returns information about the educator who is signed in", urlPatterns = { "/InstructorServlet", "/Instructor" })
+@WebServlet(description = "Returns information about the educator who is signed in", urlPatterns = { "/InstructorServlet", "/instructor" })
 public class InstructorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -45,6 +45,7 @@ public class InstructorServlet extends HttpServlet {
 	        response.setContentType("application/json");
 	        response.getWriter().write(json);
 	    }catch(Exception e){
+	        System.out.println(e);
 	        response.sendError(400);
 	    }
 	}

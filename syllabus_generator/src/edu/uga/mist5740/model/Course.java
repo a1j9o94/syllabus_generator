@@ -13,6 +13,11 @@ public class Course implements Serializable {
     private ArrayList<Grade> weightings;
     private ArrayList<Book> books;
 
+    public Course(){
+        weightings = new ArrayList<>();
+        books = new ArrayList<>();
+    }
+    
     public int getCourseId() {
         return courseId;
     }
@@ -32,18 +37,18 @@ public class Course implements Serializable {
     public String getAdditionalNotes() {
         return additionalNotes;
     }
-    
-    public ArrayList<Grade> getWeightings(){
+
+    public ArrayList<Grade> getWeightings() {
         ArrayList<Grade> result = new ArrayList<>();
-        for(Grade grade : weightings){
+        for (Grade grade : weightings) {
             result.add(grade);
         }
         return result;
     }
-    
-    public ArrayList<Book> getBooks(){
+
+    public ArrayList<Book> getBooks() {
         ArrayList<Book> result = new ArrayList<>();
-        for(Book book : books){
+        for (Book book : books) {
             result.add(book);
         }
         return result;
@@ -68,12 +73,26 @@ public class Course implements Serializable {
     public void setAdditionalNotes(String additionalNotes) {
         this.additionalNotes = additionalNotes;
     }
-    
-    public void addGade(Grade grade){
+
+    public void addGade(Grade grade) {
         weightings.add(grade);
     }
-    
-    public void addBook(Book book){
+
+    public void addBook(Book book) {
         books.add(book);
+    }
+
+    public void clearWeightings() {
+        for (Grade grade : weightings) {
+            weightings.remove(grade);
+        }
+    }
+
+    public void removeBook(Book toRemove) {
+        for (Book book : books) {
+            if (book.getBookId() == toRemove.getBookId()) {
+                books.remove(book);
+            }
+        }
     }
 }

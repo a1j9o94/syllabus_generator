@@ -34,6 +34,11 @@ public class InstructorRetrievalManager {
         return result;
 
     }
+    
+    //resets the instructor array so that it will update from the database.
+    public static void resetInstructors(){
+        instructors = null;
+    }
 
     private static void populateInstructors() throws SQLException {
         createConnection();
@@ -52,7 +57,7 @@ public class InstructorRetrievalManager {
         instructor.setFirstName(row.getString("firstName"));
         instructor.setLastName(row.getString("lastName"));
         instructor.setOfficePhone(row.getString("officePhone"));
-        instructor.setAddInfo(row.getString("addInfo"));
+        instructor.setAddInfo(row.getString("additionalInfo"));
 
         addCourses(instructor);
         instructors.add(instructor);
@@ -67,6 +72,7 @@ public class InstructorRetrievalManager {
             Course course = new Course();
             course.setCourseId(results.getInt("courseId"));
             course.setCourseName(results.getString("courseName"));
+            course.setCourseDescription(results.getString("courseDescription"));
             course.setAdditionalNotes(results.getString("additionalNotes"));
             addCalendar(course, results.getInt("Calendar_calendarID"));
             addWeightings(course);
@@ -98,7 +104,7 @@ public class InstructorRetrievalManager {
             Grade grade = new Grade();
             grade.setGradeID(results.getInt("gradeID"));
             grade.setGradeName(results.getString("gradeName"));
-            grade.setGradeWeight(results.getString("gradeWeight"));
+            grade.setGradeWeight(results.getDouble("gradeWeight"));
             course.addGade(grade);
         }
     }
@@ -154,10 +160,8 @@ public class InstructorRetrievalManager {
                 instructors = new ArrayList<>();
                 populateInstructors();
             } catch (NamingException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             } catch (SQLException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }

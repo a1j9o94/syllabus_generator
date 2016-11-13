@@ -16,6 +16,11 @@ public class Calendar implements Serializable{
 	private ArrayList<Date> schedule;
 	private ArrayList<SpecialEvent> specialEvents;
 
+	public Calendar(){
+	    schedule = new ArrayList<>();
+	    specialEvents = new ArrayList<>();
+	}
+	
 	/**
 	 * @return the calendarID
 	 */
