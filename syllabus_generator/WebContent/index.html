@@ -95,7 +95,31 @@
   <textarea name="textarea2" id="textarea2"></textarea>
 </p>
 <p>&nbsp;</p>
-<table width="79%" border="1" align="center" cellpadding="2">
+
+
+
+<table width="95%" border="1" align="center" cellpadding="2" id="gradeDistTable">
+  <caption>
+    Grade Weighting
+  </caption>
+  <tbody>
+    <tr>
+      <th width="158" align="center" scope="col"><p>Course Aspect (Homework, Tests, Quizzes, etc.)</p></th>
+      <th width="23" align="center" scope="col">Grade Weight</th>
+    </tr>
+    <tr>
+      <td align="center"><input name="textfield3" type="text" id="textfield3" size="50"></td>
+      <td align="center"><input name="textfield12" type="text" id="textfield13" size="50"></td>
+    </tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<input type="submit" name="addRow" id="gradeDistAddRow" value="Add Row">
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<table width="95%" border="1" align="center" cellpadding="2">
   <caption>
     Grade Distribution
   </caption>
@@ -146,23 +170,36 @@
     </tr>
   </tbody>
 </table>
+
+
+
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 </p>
-<table width="97%" height="43" border="1" cellpadding="1" cellspacing="1" id="dateTable">
+
+
+
+
+<table width="95%" height="43" border="1" align="center" cellpadding="1" cellspacing="1" id="dateTable">
+	<caption>
+    Course Schedule
+  </caption>
   <tbody>
     <tr>
       <th width="15%" scope="col">Date</th>
       <th width="34%" scope="col">Topic</th>
-      <th width="46%" scope="col">Readings/Homework</th>
+      <th width="46%" scope="col">Readings/Homework/Quizzes/Tests</th>
+      <tr><th scope="col"><input type="date"></th><th><input type="text"></th><th><input type="text"></th></tr>
     </tr>
   </tbody>
 </table>
+
+
+
+
 <p>&nbsp;</p>
-<p>
-  <label for="textfield21">Click submit to add new Row to table.</label>
-  <input type="submit" name="submit" id="submit" value="Submit">
-<p>
+  <input type="submit" name="submit" id="dateTableAddRow" value="Add Row">
+
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>
@@ -193,7 +230,7 @@
 <p>&nbsp;</p>
 <p> <br>
   <br>
-   <input type="submit" name="sub" id="submit" value="Generate Syllabus">
+   <input type="submit" name="submit" id="submit" value="Submit">
 </p>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
