@@ -10,3 +10,17 @@ body {
 	margin-left: 15px;
 	margin-top: 15px;
 }
+table {
+	text-align: center;
+	border-collapse: collapse;
+}
+th, td{
+	padding: 2px;
+	border: 1px;
+	border-style: solid;
+	text-align: center;
+}
+
+td input{
+	width: 100%;
+}

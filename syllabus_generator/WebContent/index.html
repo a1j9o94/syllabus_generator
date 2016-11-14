@@ -2,7 +2,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -26,220 +25,132 @@
 </head>
 
 <body>
-<h1>Syllabye Syllabus Generator 1.0</h1>
-<p>
-  <label for="textarea18"><br>
-    <br>
-  </label>
-  <label for="textarea22">Course Name/CRN:</label>
-   
-  <textarea name="textarea" id="textarea22"></textarea>
- </p>
-<p>
-  <label for="textarea3">Prerequisites, Corequisites, Cross-Listings:</label>
-  <textarea name="textarea3" id="textarea3"></textarea>
-</p>
-<p>
-  <label for="textarea24">Instructor Name:</label>
-   
-  <textarea name="textarea3" id="textarea24"></textarea>
-</p>
-<p>
-  <label for="textarea5">TA:</label>
-  <textarea name="textarea5" id="textarea5"></textarea>
- 
-<label for="textarea6">TA Email:</label>
-<textarea name="textarea6" id="textarea6"></textarea>
-</p>
-<p>
-  <label for="textarea25">Office Location:</label>
-   
-  <textarea name="textarea4" id="textarea25"></textarea>
- 
-<label for="textarea33"><br>
-  <br>
-  Office Hours:</label>
- 
-<textarea name="textarea10" id="textarea33"></textarea>
- </p>
-<p>
-  <label for="textarea27">Phone #:</label>
-   
-  <textarea name="textarea6" id="textarea27"></textarea>
- </p>
-<p>
-  <label for="textarea29">E-Mail:</label>
-   
-  <textarea name="textarea7" id="textarea29"></textarea>
- </p>
-<p>
-  <label for="textarea30">Textbook/Materials:</label>
-   
-  <textarea name="textarea8" id="textarea30"></textarea>
- </p>
-<p>
-  <label for="textarea31">Course Description:</label>
-   
-  <textarea name="textarea9" id="textarea31"></textarea>
- </p>
-<p>
-  <label for="textarea4">Course Objectives/Expected Learning Outcomes:</label>
-  <textarea name="textarea4" id="textarea4"></textarea>
-</p>
-<p>
-  <label for="textarea">Attendance Policy:</label>
-  <textarea name="textarea" id="textarea"></textarea>
-</p>
-<p>
-  <label for="textarea2">Make-up Examination Policy:</label>
-  <textarea name="textarea2" id="textarea2"></textarea>
-</p>
-<p>&nbsp;</p>
+	<h1>Syllabye Syllabus Generator 1.0</h1>
+	<form name="newCourseInput" action="processCourse" method="post">
+		<p>
+			<label for="courseName">CRN - Course Name:</label>
+			<input type="text" name="courseName"> 
+		</p>
+		<p>
+			<label for="courseDescription">Course Description:</label>
+			  <input type="text" name="courseDescription">  
+		</p>
+		<p>
+			<label for="instructorFirstName">Instructor First Name:</label>
+			  <input type="text" name="instructorFirstName"> 
+		</p>
+		<p>
+			<label for="instructorFirstName">Instructor Last Name:</label>
+			  <input type="text" name="instructorLastName"> 
+		</p>
+		<p>
+			<label for="instructorNumber">Instructor Phone #:</label>
+			  <input type="text" name="instructorPhoneNumber">
+		</p>
+		<p>
+			<label for="instructorNotes">Additional Instructor Information</label>
+		</p>
+		<p>
+			<textarea name="instructorNotes" id="instructorNotes" class="span6" rows="5"
+				placeholder="Other Course Information E.g. Office hours"></textarea>
+		</p>
+		<table id="bookTable">
+			<caption>Textbooks</caption>
+			<tr>
+				<th>Book Name</th>
+				<th>Required</th>
+			</tr>
+			<tr>
+				<td><input type="text" name="bookName-1"></td>
+				<td><input type="checkbox" name="bookRequired-1"></td>
+			</tr>
+		</table>
+		<button type="button" id="addBook">Add Book</button>
 
-
-
-<table width="95%" border="1" align="center" cellpadding="2" id="gradeDistTable">
-  <caption>
-    Grade Weighting
-  </caption>
-  <tbody>
-    <tr>
-      <th width="158" align="center" scope="col"><p>Course Aspect (Homework, Tests, Quizzes, etc.)</p></th>
-      <th width="23" align="center" scope="col">Grade Weight</th>
-    </tr>
-    <tr>
-      <td align="center"><input name="textfield3" type="text" id="textfield3" size="50"></td>
-      <td align="center"><input name="textfield12" type="text" id="textfield13" size="50"></td>
-    </tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
-<input type="submit" name="addRow" id="gradeDistAddRow" value="Add Row">
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-<table width="95%" border="1" align="center" cellpadding="2">
-  <caption>
-    Grade Distribution
-  </caption>
-  <tbody>
-    <tr>
-      <th width="158" align="center" scope="col"><p>Range</p></th>
-      <th width="23" align="center" scope="col">Grade</th>
-    </tr>
-    <tr>
-      <td align="center"><input name="textfield3" type="text" id="textfield3" size="50"></td>
-      <td align="center"><input name="textfield12" type="text" id="textfield13" size="50"></td>
-    </tr>
-    <tr>
-      <td align="center"><input name="textfield4" type="text" id="textfield4" size="50"></td>
-      <td align="center"><input name="textfield13" type="text" id="textfield14" size="50"></td>
-    </tr>
-    <tr>
-      <td align="center"><input name="textfield5" type="text" id="textfield5" size="50"></td>
-      <td align="center"><input name="textfield14" type="text" id="textfield15" size="50"></td>
-    </tr>
-    <tr>
-      <td align="center"><input name="textfield6" type="text" id="textfield6" size="50"></td>
-      <td align="center"><input name="textfield15" type="text" id="textfield16" size="50"></td>
-    </tr>
-    <tr>
-      <td align="center"><input name="textfield7" type="text" id="textfield7" size="50"></td>
-      <td align="center"><input name="textfield16" type="text" id="textfield17" size="50"></td>
-    </tr>
-    <tr>
-      <td align="center"><input name="textfield8" type="text" id="textfield8" size="50"></td>
-      <td align="center"><input name="textfield17" type="text" id="textfield18" size="50"></td>
-    </tr>
-    <tr>
-      <td align="center"><input name="textfield9" type="text" id="textfield9" size="50"></td>
-      <td align="center"><input name="textfield18" type="text" id="textfield19" size="50"></td>
-    </tr>
-    <tr>
-      <td align="center"><input name="textfield10" type="text" id="textfield10" size="50"></td>
-      <td align="center"><input name="textfield19" type="text" id="textfield20" size="50"></td>
-    </tr>
-    <tr>
-      <td align="center"><input name="textfield11" type="text" id="textfield11" size="50"></td>
-      <td align="center"><input name="textfield20" type="text" id="textfield2" size="50"></td>
-    </tr>
-    <tr>
-      <td align="center"><input name="textfield" type="text" id="textfield" size="50"></td>
-      <td align="center"><input name="textfield2" type="text" id="textfield12" size="50"></td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-</p>
+		<table id="gradeDistTable">
+			<caption>Grade Weighting</caption>
+			<tbody>
+				<tr>
+					<th>Course Aspect (Homework, Tests, Quizzes, etc.)</th>
+					<th>Grade Weight</th>
+				</tr>
+				<tr>
+					<td><input name="courseAspect-1" type="text"></td>
+					<td><input name="gradeWeight-1" type="text"></td>
+				</tr>
+			</tbody>
+		</table>
+		<button type="button" id="gradeDistAddRow">Add Weighting</button>
 
 
 
 
-<table width="95%" height="43" border="1" align="center" cellpadding="1" cellspacing="1" id="dateTable">
-	<caption>
-    Course Schedule
-  </caption>
-  <tbody>
-    <tr>
-      <th width="15%" scope="col">Date</th>
-      <th width="34%" scope="col">Topic</th>
-      <th width="46%" scope="col">Readings/Homework/Quizzes/Tests</th>
-      <tr><th scope="col"><input type="date"></th><th><input type="text"></th><th><input type="text"></th></tr>
-    </tr>
-  </tbody>
-</table>
+		<table id="dateTable">
+			<caption>Course Schedule</caption>
+			<tbody>
+				<tr>
+					<th>Date</th>
+					<th>Topic</th>
+					<th>Readings/Homework/Quizzes/Tests</th>
+				</tr>
+				<tr>
+					<td><input type="date" name="date-1"></td>
+					<td><input type="text" name="topic-1"></td>
+					<td><input type="text" name="assignments-1"></td>
+				</tr>
+			</tbody>
+		</table>
+		<button type="button" id="dateTableAddRow">Add Class Date</button>
+
+		<table id="eventsTable">
+			<caption>Course Special Events (E.g. Out of class tests)</caption>
+			<tr>
+				<th>Date</th>
+				<th>Name</th>
+				<th>Location</th>
+			</tr>
+			<tr>
+				<td><input type="date" name="eventDate-1"></td>
+				<td><input type="text" name="eventName-1"></td>
+				<td><input type="text" name="eventLocation-1"></td>
+			</tr>
+		</table>
+		<button type="button" id="eventsTableAddRow">Add Special
+			Events</button>
 
 
+		<p>
+			<label for="courseNotes">Additional Course Information</label>
+		</p>
+		<p>
+			<textarea name="courseNotes" id="courseNotes" class="span6" rows="5"
+				placeholder="Other Course Information E.g. Policies"></textarea>
+		</p>
+		<p>Academic Honesty Policy:</p>
+		<p>
+			As a University of Georgia student, you have agreed to abide by the
+			University&rsquo;s academic honesty policy, &ldquo;A Culture of
+			Honesty,&rdquo; and the Student Honor Code. All academic work must
+			meet the standards described in &ldquo;A Culture of Honesty&rdquo;
+			found at: <a
+				href="https://ovpi.uga.edu/academic-honesty/academic-honesty-policy/"
+				target="_blank">https://ovpi.uga.edu/academic-honesty/academic-honesty-policy</a>.
+			Lack of knowledge of the academic honesty policy is not a reasonable
+			explanation for a violation. Questions related to course assignments
+			and the academic honesty policy should be directed to the instructor.
+		</p>
+		<p>The course syllabus is a general plan for the course;
+			deviations announced to the class by the instructor may be necessary.</p>
+		<input type="submit" name="submit" id="submit" value="Submit">
+	</form>
 
-
-<p>&nbsp;</p>
-  <input type="submit" name="submit" id="dateTableAddRow" value="Add Row">
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>
-  <label for="textfield22">Additional Notes:</label>
-  <input type="text" name="textfield22" id="textfield22">
-</p>
-<p>&nbsp;</p>
-<p>Academic Honesty Policy:</p>
-<table width="80%" border="3">
-  <tbody>
-    <tr>
-      <th align="left" scope="col"><p>As a University of Georgia student, you have agreed to abide by the University&rsquo;s academic honesty policy, &ldquo;A Culture of Honesty,&rdquo; and the Student Honor Code. All academic work must meet the standards described in &ldquo;A Culture of Honesty&rdquo; found at: <a href="https://ovpi.uga.edu/academic-honesty/academic-honesty-policy/" target="_blank">https://ovpi.uga.edu/academic-honesty/academic-honesty-policy</a>. Lack of knowledge of the academic honesty policy is not a reasonable explanation for a violation. Questions related to course assignments and the academic honesty policy should be directed to the instructor.</p></th>
-    </tr>
-  </tbody>
-</table>
-<p>&nbsp;</p>
-<table width="80%" border="3">
-  <tbody>
-    <tr>
-      <th align="left" scope="col">The course syllabus is a general plan for the course; deviations announced to the class by the instructor may be necessary.</th>
-    </tr>
-  </tbody>
-</table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p> <br>
-  <br>
-   <input type="submit" name="submit" id="submit" value="Submit">
-</p>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/jquery-1.12.3.min.js"></script>
 	<script src="js/jquery-ui-1.12.0-rc.1/jquery-ui.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/tableScript.js"></script>
-	
+
 </body>
 
 </html>
