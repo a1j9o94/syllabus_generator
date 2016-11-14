@@ -1,4 +1,4 @@
-package edu.uga.mist5740.controller.json;
+package edu.uga.mist5740.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
