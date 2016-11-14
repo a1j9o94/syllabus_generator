@@ -146,14 +146,10 @@
     </tr>
   </tbody>
 </table>
-<p>
-  <label for="textfield21">Type M for Monday, Wednesday, Friday courses and T</label>
-for Tuesday/Thursday Courses and then select &quot;submit&quot;.</p>
-<p>
-  <input type="text" name="textfield21" id="textfield21">
-  <input type="submit" name="submit" id="submit" value="Submit">
+
+
 </p>
-<table width="97%" height="43" border="1" cellpadding="1" cellspacing="1">
+<table width="97%" height="43" border="1" cellpadding="1" cellspacing="1" id="dateTable">
   <tbody>
     <tr>
       <th width="5%" scope="col">#</th>
@@ -163,6 +159,12 @@ for Tuesday/Thursday Courses and then select &quot;submit&quot;.</p>
     </tr>
   </tbody>
 </table>
+<p>
+  <label for="textfield21">Click submit to add new Row to table.</label>
+
+  <input type="text" name="textfield21" id="textfield21">
+  <input type="submit" name="submit" id="submit" value="Submit">
+<p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>
@@ -194,9 +196,14 @@ for Tuesday/Thursday Courses and then select &quot;submit&quot;.</p>
 <p> <br>
   <br>
 </p>
-<p>	
-  <label for="textarea18">  <br>
-  </label>
-</p>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script src="js/jquery-ui-1.12.0-rc.1/jquery-ui.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="tableScript.js"></script>
+	
 </body>
+
 </html>
