@@ -55,7 +55,7 @@ public class ResultServlet extends HttpServlet {
 
 			for (Instructor i : instructors) {
 				if (i.getInstructorID() == ID) {
-					request.setAttribute("Instructor", i);
+					request.setAttribute("instructor", i);
 					ArrayList<Course> courses = i.getCourses();
 					Course course = courses.get(courses.size() - 1);
 					request.setAttribute("course", course);
