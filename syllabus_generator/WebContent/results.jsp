@@ -19,27 +19,27 @@ The course syllabus is a general plan for the course; deviations announced to th
 </p>
 <p>
 CONTACT INFORMATION AND OFFICE HOURS:
-${instructor.firstName} ${instructor.lastName}
-Office Phone: ${instructor.officePhone}
-</p>
+${instructor.firstName} ${instructor.lastName}<p>
+<p>Office Phone: ${instructor.officePhone}</p>
+
 <c:if test = "${instructor.addInfo != null}"> 
-<p> Additional Information: ${instructor.addInfo}
+<p> Additional Information: ${instructor.addInfo}</p>
 </c:if>
 
-Course Description:
-${course.courseDescription}
+<p>Course Description:
+${course.courseDescription}</p>
 
-Materials:
-${course.books}
+<p>Materials:
+${course.books}</p>
 
-Grading Scale:
-${course.getWeightings}
+<p>Grading Scale:
+${course.weightings}</p>
 
-Tentative Schedule:
-${course.getCalendar}
+<p>Tentative Schedule:
+${course.calendar}</p>
 
-Academic Honesty: 
-As a University of Georgiastudent, you have agreed to abide by the University’s academic honesty 
+<p>Academic Honesty: 
+As a University of Georgia student, you have agreed to abide by the University’s academic honesty 
 policy, “A Culture of Honesty,” and the Student Honor Code. All academic work must meet the standards described in a 
 “Culture of Honesty” found at http://www.uga.edu/honesty/. Lack of knowledge of the academic honesty policy is not a 
 reasonable explanation for a violation. Questions related to course assignments and the academic honesty policy should 
@@ -47,7 +47,7 @@ be directed to the instructor.“The academic honesty policy of the University i
 Code which was adopted by the Student Government Association and approved by the University Council May 1, 1997, and 
 provides: "I will be academically honest in all of my academic work and will not tolerate academic dishonesty of others.
 "All students agree to abide by this code by signing the UGA Admissions Application.” 
-Source: http://www.uga.edu/honesty/ahpd/student_honor_code.html. 
+Source: http://www.uga.edu/honesty/ahpd/student_honor_code.html. </p>
 
 Additional Notes:
 ${course.additionalNotes}
