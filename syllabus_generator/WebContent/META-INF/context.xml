@@ -2,5 +2,5 @@
 <Context>
 	<Resource name="jdbc/syllabus_generator" auth="Container" driverClassName="com.mysql.jdbc.Driver"
 		type="javax.sql.DataSource" username="root" password=""
-		url="jdbc:mysql://localhost:3306/syllabus_generator" />
+		url="jdbc:mysql://localhost:3306/syllabus_generator?useSSL=false" />
 </Context>

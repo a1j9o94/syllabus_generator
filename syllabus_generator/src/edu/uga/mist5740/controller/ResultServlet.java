@@ -78,6 +78,7 @@ public class ResultServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
+			
 		}
 
 	}
