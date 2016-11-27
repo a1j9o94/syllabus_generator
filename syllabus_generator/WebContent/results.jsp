@@ -44,7 +44,7 @@
 		</p>
 	</div>
 	
-	<h3>CONTACT INFORMATION AND OFFICE HOURS:</h3>
+	<h3>CONTACT INFORMATION:</h3>
 	<div id="contact">
 		<p>Instructor Name: ${instructor.firstName} ${instructor.lastName}</p>
 		<p>Office Phone: ${instructor.officePhone}</p>
@@ -145,7 +145,7 @@
 		http://www.uga.edu/honesty/ahpd/student_honor_code.html.</p>
 	</div>
 
-	<form Method =LINK Action = "index.html">
+	<form Method =LINK Action = "index.jsp">
 	<Input type="submit" value = "Restart">
 	</form>
 
