@@ -17,7 +17,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Our Styling -->
-<link href="css/main.css" rel="stylesheet">
+<link href="css/resultstyle.css" rel="stylesheet">
 
 <!-- Jquery UI styling -->
 <link rel="stylesheet" href="js/jquery-ui-1.12.0-rc.1/jquery-ui.min.css">
@@ -30,24 +30,34 @@
     <![endif]-->
 </head>
 <body>
-	<h1>Syllabus Generator</h1>
+	<div id="Header">
+	<h1>Syllabye Syllabus Generator 1.0</h1>
+	</div>
 	<h2>${course.courseName}</h2>
-	<p>
-		<a href="http://www.elc.uga.edu"> Course Syllabus University of
+	<h4>University of Georgia - Terry College of Business - MIS Department</h4>
+	<div id="liability">
+		<p>
+			<a href="http://www.elc.uga.edu"> Course Syllabus University of
 			Georgia</a> - Terry College of Business - MIS Department The course
-		syllabus is a general plan for the course; deviations announced to the
-		class by the instructor may be necessary.
-	</p>
+			syllabus is a general plan for the course; deviations announced to the
+			class by the instructor may be necessary.
+		</p>
+	</div>
+	
 	<h3>CONTACT INFORMATION AND OFFICE HOURS:</h3>
-	<p>Instructor Name: ${instructor.firstName} ${instructor.lastName}</p>
-	<p>Office Phone: ${instructor.officePhone}</p>
+	<div id="contact">
+		<p>Instructor Name: ${instructor.firstName} ${instructor.lastName}</p>
+		<p>Office Phone: ${instructor.officePhone}</p>
 
-	<c:if test="${instructor.addInfo != null}">
-		<p>Additional Information: ${instructor.addInfo}</p>
-	</c:if>
+		<c:if test="${instructor.addInfo != null}">
+			<p>Additional Information: ${instructor.addInfo}</p>
+		</c:if>
+	</div>
 
 	<h3>Course Description:</h3>
-	<p>${course.courseDescription}</p>
+	<div id="description">
+		<p>${course.courseDescription}</p>
+	</div>
 
 	<h3>Materials</h3>
 	<table id="bookTable">
@@ -113,7 +123,11 @@
 			</tr>
 		</c:forEach>
 	</table>
+	
+	<h3>Additional Notes:</h3>
+		<p> ${course.additionalNotes}</p>
 
+<div id="honesty">
 	<p>Academic Honesty: As a University of Georgia student, you have
 		agreed to abide by the University’s academic honesty policy, “A
 		Culture of Honesty,” and the Student Honor Code. All academic work
@@ -129,8 +143,11 @@
 		dishonesty of others. "All students agree to abide by this code by
 		signing the UGA Admissions Application.” Source:
 		http://www.uga.edu/honesty/ahpd/student_honor_code.html.</p>
+	</div>
 
-	Additional Notes: ${course.additionalNotes}
+	<form Method =LINK Action = "index.html">
+	<Input type="submit" value = "Restart">
+	</form>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/jquery-1.12.3.min.js"></script>
