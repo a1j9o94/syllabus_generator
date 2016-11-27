@@ -1,3 +1,6 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html>
 <head>
@@ -25,35 +28,38 @@
 </head>
 
 <body>
+
+	<c:if test="${redirected != null && redirected == true}">
+		<p class="error">${errorMsg}</p>
+	</c:if>
 	<h1>Syllabye Syllabus Generator 1.0</h1>
 	<form name="newCourseInput" action="processCourse" method="post">
 		<p>
 			<label for="courseName">CRN - Course Name:</label>
-			<input type="text" name="courseName"> 
+			<input type="text" name="courseName">
 		</p>
 		<p>
 			<label for="courseDescription">Course Description:</label>
-			  <input type="text" name="courseDescription">  
+			<input type="text" name="courseDescription">
 		</p>
 		<p>
 			<label for="instructorFirstName">Instructor First Name:</label>
-			  <input type="text" name="instructorFirstName"> 
+			<input type="text" name="instructorFirstName">
 		</p>
 		<p>
 			<label for="instructorFirstName">Instructor Last Name:</label>
-			  <input type="text" name="instructorLastName"> 
+			<input type="text" name="instructorLastName">
 		</p>
 		<p>
 			<label for="instructorNumber">Instructor Phone #:</label>
-			  <input type="text" name="instructorPhoneNumber">
+			<input type="text" name="instructorPhoneNumber">
 		</p>
 		<p>
-			<label for="instructorNotes">Additional Instructor
-				Information</label>
+			<label for="instructorNotes">Additional Instructor Information</label>
 		</p>
 		<p>
-			<textarea name="instructorNotes" id="instructorNotes" class="span6"
-				rows="5" placeholder="Other Course Information E.g. Office hours"></textarea>
+			<textarea name="instructorNotes" id="instructorNotes" class="span6" rows="5"
+				placeholder="Other Course Information E.g. Office hours"></textarea>
 		</p>
 		<table id="bookTable">
 			<caption>Textbooks</caption>
@@ -116,8 +122,7 @@
 				<td><input type="text" name="eventLocation-1"></td>
 			</tr>
 		</table>
-		<button type="button" id="eventsTableAddRow">Add Special
-			Events</button>
+		<button type="button" id="eventsTableAddRow">Add Special Events</button>
 
 
 		<p>
@@ -129,19 +134,15 @@
 		</p>
 		<p>Academic Honesty Policy:</p>
 		<p>
-			As a University of Georgia student, you have agreed to abide by the
-			University&rsquo;s academic honesty policy, &ldquo;A Culture of
-			Honesty,&rdquo; and the Student Honor Code. All academic work must
-			meet the standards described in &ldquo;A Culture of Honesty&rdquo;
-			found at: <a
-				href="https://ovpi.uga.edu/academic-honesty/academic-honesty-policy/"
-				target="_blank">https://ovpi.uga.edu/academic-honesty/academic-honesty-policy</a>.
-			Lack of knowledge of the academic honesty policy is not a reasonable
-			explanation for a violation. Questions related to course assignments
-			and the academic honesty policy should be directed to the instructor.
+			As a University of Georgia student, you have agreed to abide by the University&rsquo;s academic honesty policy,
+			&ldquo;A Culture of Honesty,&rdquo; and the Student Honor Code. All academic work must meet the standards
+			described in &ldquo;A Culture of Honesty&rdquo; found at: <a
+				href="https://ovpi.uga.edu/academic-honesty/academic-honesty-policy/" target="_blank">https://ovpi.uga.edu/academic-honesty/academic-honesty-policy</a>.
+			Lack of knowledge of the academic honesty policy is not a reasonable explanation for a violation. Questions
+			relatedÂ to course assignments and the academic honesty policy should be directed to the instructor.
 		</p>
-		<p>The course syllabus is a general plan for the course;
-			deviations announced to the class by the instructor may be necessary.</p>
+		<p>The course syllabus is a general plan for the course; deviations announced to the class by the instructor
+			may be necessary.</p>
 		<input type="submit" name="submit" id="submit" value="Submit">
 	</form>
 

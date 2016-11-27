@@ -83,9 +83,7 @@ public class Course implements Serializable {
     }
 
     public void clearWeightings() {
-        for (Grade grade : weightings) {
-            weightings.remove(grade);
-        }
+        weightings = new ArrayList<>();
     }
 
     public void removeBook(Book toRemove) {

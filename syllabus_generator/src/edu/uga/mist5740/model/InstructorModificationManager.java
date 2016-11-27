@@ -19,7 +19,7 @@ public class InstructorModificationManager {
 
     public static void addInstructor(Instructor instructor, ArrayList<Instructor> instructors) throws SQLException {
         createConnection();
-        String query = "INSERT INTO instructor (instructorFirstName, instructorLastName, officePhone, additionalInfo) VALUE (?, ?, ?, ?);";
+        String query = "INSERT INTO instructor (firstName, lastName, officePhone, additionalInfo) VALUE (?, ?, ?, ?);";
 
         PreparedStatement ps = connection.prepareStatement(query);
 
@@ -28,17 +28,32 @@ public class InstructorModificationManager {
         ps.setString(3, instructor.getOfficePhone());
         ps.setString(4, instructor.getAddInfo());
 
-        ps.executeUpdate();
+        try {
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         String idQuery = "SELECT MAX(instructorID) FROM instructor";
         ps = connection.prepareStatement(idQuery);
         ResultSet maxResults = ps.executeQuery();
         while (maxResults.next()) {
-            instructor.setInstructorID(maxResults.getInt(0));
+            instructor.setInstructorID(maxResults.getInt(1));
         }
 
         instructors.add(instructor);
+        for(Course course : instructor.getCourses()){
+            addCourseToInstructor(instructor, course);
+        }
         InstructorRetrievalManager.resetInstructors();
+    }
+    
+    public static void addInstructor(Instructor instructor) throws SQLException {
+        try {
+            addInstructor(instructor, InstructorRetrievalManager.getInstructors());
+        } catch (NamingException e) {
+            throw new SQLException();
+        }
     }
 
     public static void updateInstructor(Instructor instructor) throws SQLException {
@@ -84,13 +99,21 @@ public class InstructorModificationManager {
             ps.setInt(3, instructor.getInstructorID());
             ps.setString(4, course.getAdditionalNotes());
             ps.executeUpdate();
-            String idQuery = "SELECT MAX(instructorID) FROM course";
-            ps = connection.prepareStatement(idQuery);
+            String idQuery = "SELECT MAX(courseID) FROM course";
+            try {
+                ps = connection.prepareStatement(idQuery);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             ResultSet maxResults = ps.executeQuery();
             while (maxResults.next()) {
-                course.setCourseId(maxResults.getInt(0));
+                course.setCourseId(maxResults.getInt(1));
             }
             replaceCourseCalendar(course, course.getCalendar());
+            replaceCourseWeightings(course, course.getWeightings());
+            for(Book book : course.getBooks()){
+                addBookToCourse(course, book);
+            }
             InstructorRetrievalManager.resetInstructors();
             instructor.addCourse(course);
         }else{
@@ -106,7 +129,7 @@ public class InstructorModificationManager {
             PreparedStatement ps = connection.prepareStatement(query1);
             ResultSet maxResults = ps.executeQuery();
             while (maxResults.next()) {
-                newId = maxResults.getInt(0) + 1;
+                newId = maxResults.getInt(1) + 1;
             }
             cal.setCalendarID(newId);
             String query2 = "INSERT INTO calendar (calendarID) VALUE (?)";

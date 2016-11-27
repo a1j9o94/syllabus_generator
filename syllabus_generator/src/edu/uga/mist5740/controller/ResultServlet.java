@@ -51,7 +51,7 @@ public class ResultServlet extends HttpServlet {
 
 		try {
 			ArrayList<Instructor> instructors = InstructorRetrievalManager.getInstructors();
-			int ID = 1;
+			int ID = instructors.get(instructors.size()-1).getInstructorID();
 
 			for (Instructor i : instructors) {
 				if (i.getInstructorID() == ID) {
