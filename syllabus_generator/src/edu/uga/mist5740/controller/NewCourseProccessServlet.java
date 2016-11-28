@@ -95,8 +95,15 @@ public class NewCourseProccessServlet extends HttpServlet {
         while (request.getParameter(gradeWeight + courseNumber) != null) {
             Grade g = new Grade();
             g.setGradeName(request.getParameter(courseName + courseNumber));
-            g.setGradeWeight(Double.parseDouble(request.getParameter(gradeWeight + courseNumber)));
-
+            try {
+                g.setGradeWeight(
+                        Double.parseDouble(request.getParameter(gradeWeight + courseNumber)));
+            } catch (Exception e) {
+                e.printStackTrace();
+                forwardError(
+                        "The weighting you entered was not the correct format. Please enter the percengtage withouth a % sign",
+                        request, response);
+            }
             newCourse.addGade(g);
             courseNumber++; // check for more
         }
@@ -183,7 +190,7 @@ public class NewCourseProccessServlet extends HttpServlet {
         try {
             InstructorModificationManager.addInstructor(newInstructor);
         } catch (Exception e) {
-           e.printStackTrace();
+            e.printStackTrace();
             forwardError(
                     "There was a problem adding your course to the database, please try again. ",
                     request, response);
