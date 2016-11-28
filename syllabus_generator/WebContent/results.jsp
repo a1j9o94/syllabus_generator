@@ -110,9 +110,10 @@
 			</tr>
 		</c:forEach>
 	</table>
-	
+	<div id="Notes">
 	<h3>Additional Notes:</h3>
 		<p> ${course.additionalNotes}</p>
+	</div>
 
 <div id="honesty">
 	<p>Academic Honesty: As a University of Georgia student, you have

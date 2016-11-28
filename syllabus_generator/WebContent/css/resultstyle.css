@@ -59,8 +59,11 @@ table, th, tr, td{
 	float:left;
 }
 #eventsTable{
-	float: center;
 	margin-left: 2cm;
+}
+#Notes{
+	clear:both;
+	padding-top:10px;
 }
 #honesty p{
 	text-align: left;
