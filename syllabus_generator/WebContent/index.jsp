@@ -63,14 +63,16 @@
 		</p>
 		<table id="bookTable">
 			<caption>Textbooks</caption>
-			<tr>
-				<th>Book Name</th>
-				<th>Required</th>
-			</tr>
-			<tr>
-				<td><input type="text" name="bookName-1"></td>
-				<td><input type="checkbox" name="bookRequired-1"></td>
-			</tr>
+			<tbody>
+				<tr>
+					<th>Book Name</th>
+					<th>Required</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="bookName-1"></td>
+					<td><input type="checkbox" name="bookRequired-1"></td>
+				</tr>
+			</tbody>
 		</table>
 		<button type="button" id="addBook">Add Book</button>
 

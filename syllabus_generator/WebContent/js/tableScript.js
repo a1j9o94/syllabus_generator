@@ -33,7 +33,7 @@ $(document).ready(function(){
     	bookCounter++;
     	event.preventDefault();
     	
-    	var newRow = $('<td> <input type="text" name="bookName-' + bookCounter + '"></td><td><input type="checkbox" name="bookRequired-' + bookCounter + '"></td>');
+    	var newRow = $('<tr><td> <input type="text" name="bookName-' + bookCounter + '"></td><td><input type="checkbox" name="bookRequired-' + bookCounter + '"></td></tr>');
     	$("#bookTable").append(newRow);
     });
 });
